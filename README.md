@@ -26,7 +26,6 @@ Kali Linux Offensive Security Certified Professional Playbook
   * [Database Vulnerabilities](#database-vulnerabilities)
   * [Password Attacks](#password-attacks)
   * [Password Hash Attacks](#password-hash-attacks)
-- [Networking, Pivoting and Tunneling](#networking-pivoting-and-tunneling)
 - [The Metasploit Framework](#the-metasploit-framework)
 - [Bypassing Antivirus Software](#bypassing-antivirus-software)
 
