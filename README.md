@@ -2,35 +2,7 @@
 
 # OSCP-Survival-Guide
 Kali Linux Offensive Security Certified Professional Playbook
-<pre>
-   _____ _____ _____ ______   _____                  _            _   _____       _     _      
-  |  _  /  ___/  __ \| ___ \ /  ___|                (_)          | | |  __ \     (_)   | |     
-  | | | \ `--.| /  \/| |_/ / \ `--. _   _ _ ____   _____   ____ _| | | |  \/_   _ _  __| | ___ 
-  | | | |`--. \ |    |  __/   `--. \ | | | '__\ \ / / \ \ / / _` | | | | __| | | | |/ _` |/ _ \
-  \ \_/ /\__/ / \__/\| |     /\__/ / |_| | |   \ V /| |\ V / (_| | | | |_\ \ |_| | | (_| |  __/
-   \___/\____/ \____/\_|     \____/ \__,_|_|    \_/ |_| \_/ \__,_|_|  \____/\__,_|_|\__,_|\___|
-</pre>
- 
- ***UPDATE: October 4, 2017***
-For OSCP Lab machine enumeration automation, checkout my other project: **VANQUISH**
 
-Vanquish is Kali Linux based Enumeration Orchestrator. Vanquish leverages the opensource enumeration tools on Kali to perform multiple active information gathering phases. The results of each phase are fed into the next phase to identify vulnerabilities that could be leveraged for a remote shell.
- 
- https://github.com/frizb/Vanquish
- 
-***UPDATE: October 2, 2017***
-Thanks for all the Stars! Wrote my OSCP exam last night, did not pass sadly ... but I recorded a stop motion video of my failed attempt. TRY HARDER!
-
-https://www.youtube.com/watch?v=HBMZWl9zcsc
-
-The good news is that I will be learning more and adding more content to this guide :D
-
-
- **NOTE: This document refers to the target ip as the export variable $ip.**  
- 
- **To set this value on the command line use the following syntax:**
- 
- **export ip=192.168.1.100**
 
 ## Table of Contents
 - [Kali Linux](#kali-linux)
@@ -342,78 +314,7 @@ Information Gathering & Vulnerability Scanning
 /17 | 32768 | 32766 | 255.255.128.0 | 128
 /16 | 65536 | 65534 | 255.255.0.0 | 256
 
- -   Set the ip address as a variable  
-     `export ip=192.168.1.100  `
-     `nmap -A -T4 -p- $ip`
 
- -   Netcat port Scanning  
-     `nc -nvv -w 1 -z $ip 3388-3390`
-     
- -   Discover active IPs usign ARP on the network:
-     `arp-scan $ip/24`
-
- -   Discover who else is on the network  
-     `netdiscover`
-
- -   Discover IP Mac and Mac vendors from ARP  
-     `netdiscover -r $ip/24`
-
- -   Nmap stealth scan using SYN  
-     `nmap -sS $ip`
-
- -   Nmap stealth scan using FIN  
-     `nmap -sF $ip`
-
- -   Nmap Banner Grabbing  
-     `nmap -sV -sT $ip`
-
- -   Nmap OS Fingerprinting  
-     `nmap -O $ip`
-
- -   Nmap Regular Scan:  
-     `nmap $ip/24`
-
- -   Enumeration Scan  
-     `nmap -p 1-65535 -sV -sS -A -T4 $ip/24 -oN nmap.txt`
-
- -   Enumeration Scan All Ports TCP / UDP and output to a txt file  
-     `nmap -oN nmap2.txt -v -sU -sS -p- -A -T4 $ip`
-
- -   Nmap output to a file:  
-     `nmap -oN nmap.txt -p 1-65535 -sV -sS -A -T4 $ip/24`
-
- -   Quick Scan:  
-     `nmap -T4 -F $ip/24`
-
- -   Quick Scan Plus:  
-     `nmap -sV -T4 -O -F --version-light $ip/24`
-
- -   Quick traceroute  
-     `nmap -sn --traceroute $ip`
-
- -   All TCP and UDP Ports  
-     `nmap -v -sU -sS -p- -A -T4 $ip`
-
- -   Intense Scan:  
-     `nmap -T4 -A -v $ip`
-
- -   Intense Scan Plus UDP  
-     `nmap -sS -sU -T4 -A -v $ip/24`
-
- -   Intense Scan ALL TCP Ports  
-     `nmap -p 1-65535 -T4 -A -v $ip/24`
-
- -   Intense Scan - No Ping  
-     `nmap -T4 -A -v -Pn $ip/24`
-
- -   Ping scan  
-     `nmap -sn $ip/24`
-
- -   Slow Comprehensive Scan  
-     `nmap -sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --script "default or (discovery and safe)" $ip/24`
-
- -   Scan with Active connect in order to weed out any spoofed ports designed to troll you  
-     `nmap -p1-65535 -A -T5 -sT $ip`
 
 -   Enumeration
     -----------
