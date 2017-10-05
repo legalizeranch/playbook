@@ -277,6 +277,11 @@ Information Gathering & Vulnerability Scanning
 
 -   Port Scanning
     -----------------------------------------------------------------------------------------------------------
+    
+    
+-   OneTwoPunch
+    `./onetwopunch.sh -t targets.txt -p all -i tap0 -n -A  `
+
 *Subnet Reference Table*
 
 / | Addresses | Hosts | Netmask | Amount of a Class C
